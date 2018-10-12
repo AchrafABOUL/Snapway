@@ -1,0 +1,66 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Snapway</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-list>
+        <ion-item >
+              <ion-label>i am photograph </ion-label>
+              <ion-checkbox [(ngModel)]="isPhotograph" ></ion-checkbox>
+          </ion-item>
+        <ion-item>
+            <ion-label floating>First Name</ion-label>
+            <ion-input type="text" [(ngModel)]="fName"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Last Name</ion-label>
+            <ion-input type="text" [(ngModel)]="lName"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Email</ion-label>
+          <ion-input type="email" [(ngModel)]="email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input type="password" [(ngModel)]="password"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Confirm password</ion-label>
+            <ion-input type="password" [(ngModel)]="cPassword"></ion-input>
+        </ion-item>  
+      <div  *ngIf="isPhotograph">
+          <ion-item>
+              <ion-label>Type of Photography</ion-label>
+              <ion-select [(ngModel)]="type">
+                <ion-option value="wedding">Wedding</ion-option>
+                <ion-option value="graduation">Graduation</ion-option>
+                <ion-option value="holiday">Holiday</ion-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>Estimate price per hour ($)</ion-label>
+              <ion-input type="number" [(ngModel)]="price"></ion-input>
+            </ion-item>
+      </div>
+           
+        
+        
+      </ion-list>
+    
+    <Button ion-button block color="primary" (click)="register($event)">Register</Button>
+    <Button ion-button clear block color="primary" (click)="goLogin($event)">Sign In </Button>
+    
+
+</ion-content>
